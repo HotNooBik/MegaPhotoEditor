@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MegaEditor</class>
+ <widget class="QWidget" name="MegaEditor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1226</width>
+    <height>940</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 155, 111, 255), stop:1 rgba(0, 255, 191, 255));</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="hbox">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <layout class="QVBoxLayout" name="vbox2">
+       <property name="spacing">
+        <number>20</number>
+       </property>
+       <item>
+        <widget class="QGraphicsView" name="screen">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>1400</width>
+           <height>900</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 0), stop:1 rgba(255, 255, 255, 0));</string>
+         </property>
+         <property name="backgroundBrush">
+          <brush brushstyle="NoBrush">
+           <color alpha="255">
+            <red>240</red>
+            <green>240</green>
+            <blue>240</blue>
+           </color>
+          </brush>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="hbox2" stretch="0,0">
+         <property name="spacing">
+          <number>100</number>
+         </property>
+         <property name="leftMargin">
+          <number>200</number>
+         </property>
+         <property name="rightMargin">
+          <number>200</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="back_btn">
+           <property name="minimumSize">
+            <size>
+             <width>240</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>500</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(243, 229, 225, 255), stop:1 rgba(255, 141, 141, 255));</string>
+           </property>
+           <property name="text">
+            <string>Вернуться в меню</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>200</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="vbox1">
+       <item>
+        <layout class="QVBoxLayout" name="vbox3" stretch="0">
+         <property name="leftMargin">
+          <number>10</number>
+         </property>
+         <property name="topMargin">
+          <number>11</number>
+         </property>
+         <property name="rightMargin">
+          <number>10</number>
+         </property>
+         <item>
+          <layout class="QVBoxLayout" name="vbox4" stretch="0,0,0,0,0,0">
+           <property name="spacing">
+            <number>120</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="color_channel">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>60</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>800</width>
+               <height>60</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>12</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: qlineargradient(spread:pad, x1:0.149254, y1:0.875, x2:0.881, y2:0.136364, stop:0 rgba(255, 0, 0, 221), stop:0.537313 rgba(0, 255, 0, 226), stop:1 rgba(0, 0, 255, 234));</string>
+             </property>
+             <property name="text">
+              <string>Просмотреть цветовой
+канал</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="negative">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>60</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>800</width>
+               <height>60</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>12</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(9, 41, 4, 255), stop:0.085 rgba(2, 79, 0, 255), stop:0.19 rgba(50, 147, 22, 255), stop:0.275 rgba(236, 191, 49, 255), stop:0.39 rgba(243, 61, 34, 255), stop:0.555 rgba(135, 81, 60, 255), stop:0.667 rgba(121, 75, 255, 255), stop:0.825 rgba(164, 255, 244, 255), stop:0.885 rgba(104, 222, 71, 255), stop:1 rgba(93, 128, 0, 255));</string>
+             </property>
+             <property name="text">
+              <string>Сделать негатив</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="low_brightness">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>60</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>800</width>
+               <height>60</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>12</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(225, 243, 238, 255), stop:1 rgba(141, 255, 227, 255));
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 255, 255, 217), stop:1 rgba(0, 0, 0, 237));</string>
+             </property>
+             <property name="text">
+              <string>Понизить яркость</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="add_circle">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>60</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>800</width>
+               <height>60</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>12</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.452736 rgba(153, 255, 157, 255), stop:0.5 rgba(255, 76, 76, 205), stop:0.52 rgba(255, 76, 76, 205), stop:0.542289 rgba(180, 255, 199, 255), stop:1 rgba(66, 255, 108, 255));</string>
+             </property>
+             <property name="text">
+              <string>Нарисовать красный
+круг</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>0</width>
+               <height>100</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="save">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>60</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>800</width>
+               <height>60</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>12</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(71, 255, 99, 255), stop:1 rgba(255, 255, 255, 255));</string>
+             </property>
+             <property name="text">
+              <string>Сохранить</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
