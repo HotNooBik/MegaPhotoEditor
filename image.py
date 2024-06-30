@@ -31,6 +31,18 @@ class Image:
         final_hsv = cv2.merge((h, s, v))
         self.img = cv2.cvtColor(final_hsv, cv2.COLOR_HSV2BGR)
 
+    def make_red_channel(self):
+        self.img[:, :, 0] = 0
+        self.img[:, :, 1] = 0
+
+    def make_green_channel(self):
+        self.img[:, :, 0] = 0
+        self.img[:, :, 2] = 0
+
+    def make_blue_channel(self):
+        self.img[:, :, 1] = 0
+        self.img[:, :, 2] = 0
+
 
 if __name__ == "__main__":
     image = Image(f'C:\\Users\\maksi\\Desktop\\MegaPhotoEditor\\images\\data\\cam.png')

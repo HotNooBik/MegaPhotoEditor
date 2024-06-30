@@ -5,7 +5,7 @@ from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QFileDialog, QMessageBox, QLabel, QGraphicsView, \
     QGraphicsScene, QWidget, QFrame, QVBoxLayout
 from image import Image
-from widgets import DecBrightFrame
+from widgets import DecBrightFrame, ColorChannelFrame
 from PIL import Image as Images
 from copy import deepcopy
 
@@ -163,7 +163,12 @@ class EditorWindow(QWidget):
             print(ex)
 
     def color_channel_frame(self):
-        pass
+        try:
+            color_channel_frame = ColorChannelFrame(self)
+            self.main_frame.setParent(None)
+            self.main_vbox.addWidget(color_channel_frame.frame)
+        except Exception as ex:
+            print(ex)
 
     def negative_img_update(self):
         try:
