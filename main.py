@@ -5,7 +5,7 @@ from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QFileDialog, QMessageBox, QLabel, QGraphicsView, \
     QGraphicsScene, QWidget, QFrame, QVBoxLayout
 from image import Image
-from widgets import DecBrightFrame, ColorChannelFrame
+from widgets import DecBrightFrame, ColorChannelFrame, AddingCircleFrame
 from PIL import Image as Images
 from copy import deepcopy
 
@@ -126,6 +126,10 @@ class EditorWindow(QWidget):
         self.dec_bright_btn = self.findChild(QPushButton, "low_brightness")
         self.dec_bright_btn.clicked.connect(self.decrease_brightness_frame)
 
+        # Кнопка для добавления круга
+        self.add_circle_btn = self.findChild(QPushButton, "add_circle")
+        self.add_circle_btn.clicked.connect(self.add_circle_frame)
+
         # Фрейм и схема (layout) с кнопками основных функций
         self.main_frame = self.findChild(QFrame, "frame")
         self.main_vbox = self.findChild(QVBoxLayout, "vbox1")
@@ -186,6 +190,14 @@ class EditorWindow(QWidget):
             decrease_brightness_frame = DecBrightFrame(self)
             self.main_frame.setParent(None)
             self.main_vbox.addWidget(decrease_brightness_frame.frame)
+        except Exception as ex:
+            print(ex)
+
+    def add_circle_frame(self):
+        try:
+            adding_circle_frame = AddingCircleFrame(self)
+            self.main_frame.setParent(None)
+            self.main_vbox.addWidget(adding_circle_frame.frame)
         except Exception as ex:
             print(ex)
 

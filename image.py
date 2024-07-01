@@ -9,6 +9,7 @@ class Image:
         self.img_name = file.split("\\")[-1][0:file.split("\\")[-1].rfind('.')]
         self.img_format = file.split("\\")[-1][file.split("\\")[-1].rfind('.')+1:]
         self.img_path = file
+        self.height, self.width, _ = self.img.shape
 
     def set_new_path(self, file: str):
         self.img_name = file.split("\\")[-1][0:file.split("\\")[-1].rfind('.')]
@@ -43,10 +44,11 @@ class Image:
         self.img[:, :, 1] = 0
         self.img[:, :, 2] = 0
 
+    def add_red_circle(self, coords: tuple, radius: int, thikness: int):
+        cv2.circle(self.img, coords, radius, (0, 0, 255), thikness)
+
 
 if __name__ == "__main__":
-    image = Image(f'C:\\Users\\maksi\\Desktop\\MegaPhotoEditor\\images\\data\\cam.png')
-    print(image.img_name, image.img_format)
     while True:
-        value = int(input("Введите значение: "))
-        image.decrease_brightness(value)
+        image = Image(f'C:\\Users\\maksi\\Desktop\\MegaPhotoEditor\\images\\data\\cam.png')
+        image.add_red_circle()

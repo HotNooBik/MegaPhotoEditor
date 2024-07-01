@@ -2,7 +2,7 @@ import pathlib
 
 from PyQt5 import uic
 from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import QWidget, QFrame, QPushButton, QSlider
+from PyQt5.QtWidgets import QWidget, QFrame, QPushButton, QSlider, QSpinBox
 from image import Image
 from copy import deepcopy
 
@@ -80,5 +80,64 @@ class ColorChannelFrame(QWidget):
             self.frame.setParent(None)
             main.main_vbox.addWidget(main.main_frame)
             main.original_image = deepcopy(main.current_image)
+        except Exception as ex:
+            print(ex)
+
+
+class AddingCircleFrame(QWidget):
+    def __init__(self, main):
+        super().__init__()
+        uic.loadUi(f"{pathlib.Path(__file__).parent.absolute()}\\ui\\red_circle_box.ui", self)
+
+        self.USER_DATA_PATH = main.USER_DATA_PATH
+
+        self.frame = self.findChild(QFrame, "frame")
+        self.accept_btn = self.findChild(QPushButton, "accept")
+        self.accept_btn.clicked.connect(lambda: self.save_current_image(main))
+        self.reject_btn = self.findChild(QPushButton, "reject")
+        self.reject_btn.clicked.connect(lambda: self.return_original_image(main))
+
+        self.x_coord_box = self.findChild(QSpinBox, "x_coord")
+        self.x_coord_box.setMaximum(main.current_image.width)
+        self.y_coord_box = self.findChild(QSpinBox, "y_coord")
+        self.y_coord_box.setMaximum(main.current_image.height)
+        self.radius_box = self.findChild(QSpinBox, "radius")
+        self.radius_box.setMaximum(main.current_image.height if main.current_image.height > main.current_image.width
+                                   else main.current_image.width)
+        self.thikness_box = self.findChild(QSpinBox, "thikness")
+        self.thikness_box.setMaximum(30000)
+        self.x_coord_box.valueChanged.connect(lambda: self.show_red_circle(main))
+        self.y_coord_box.valueChanged.connect(lambda: self.show_red_circle(main))
+        self.radius_box.valueChanged.connect(lambda: self.show_red_circle(main))
+        self.thikness_box.valueChanged.connect(lambda: self.show_red_circle(main))
+
+    def show_red_circle(self, main):
+        try:
+            main.current_image = deepcopy(main.original_image)
+            coords = (self.x_coord_box.value(), self.y_coord_box.value())
+            radius = self.radius_box.value()
+            thikness = self.thikness_box.value()
+            main.current_image.add_red_circle(coords, radius, thikness)
+            data_file_path = self.USER_DATA_PATH + "redCircle." + main.current_image.img_format
+            main.current_image.set_new_path(data_file_path)
+            main.current_image.save_image(data_file_path)
+            main.update_image()
+        except Exception as ex:
+            print(ex)
+
+    def save_current_image(self, main):
+        try:
+            self.frame.setParent(None)
+            main.main_vbox.addWidget(main.main_frame)
+            main.original_image = deepcopy(main.current_image)
+        except Exception as ex:
+            print(ex)
+
+    def return_original_image(self, main):
+        try:
+            self.frame.setParent(None)
+            main.main_vbox.addWidget(main.main_frame)
+            main.current_image = deepcopy(main.original_image)
+            main.update_image()
         except Exception as ex:
             print(ex)
