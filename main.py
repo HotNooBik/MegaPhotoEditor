@@ -197,7 +197,7 @@ class EditorWindow(QWidget):
             error.setIcon(QMessageBox.Warning)
             error.setStandardButtons(QMessageBox.Ok)
             error.setInformativeText("Возможно при сохранении файла было указано неверное расширение файла. "
-                                     "Нужно png или jpg.")
+                                     "Нужно png или jpg.\n\n" + str(ex))
             error.exec_()
 
     def color_channel_frame(self):
