@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1226</width>
-    <height>944</height>
+    <height>966</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -100,7 +100,7 @@
             <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(243, 229, 225, 255), stop:1 rgba(255, 141, 141, 255));</string>
            </property>
            <property name="text">
-            <string>Вернуться в меню</string>
+            <string>Вернуться к выбору фото</string>
            </property>
           </widget>
          </item>
