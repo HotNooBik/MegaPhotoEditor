@@ -95,10 +95,10 @@ class StartWindow(QMainWindow):
             path = f'{pathlib.Path(__file__).parent.absolute()}\\images\\data'
             # Записываем в файл
             cv2.imwrite(os.path.join(path, 'cam.png'), result[1])
+            self.close()
+            self.main_window = EditorWindow(f'{pathlib.Path(__file__).parent.absolute()}\\images\\data\\cam.png')
+            self.main_window.show()
 
-        self.close()
-        self.main_window = EditorWindow(f'{pathlib.Path(__file__).parent.absolute()}\\images\\data\\cam.png')
-        self.main_window.show()
         # Отключаем камеру
         cap.release()
 
